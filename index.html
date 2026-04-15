@@ -3,51 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Krishanu Ghosh | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <p>Web Developer | Golang Enthusiast | Flutter Developer</p>
+    <nav id="navbar">
+        <div class="nav-content">
+            <h1 class="logo">Krishanu<span> Ghosh</span></h1>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div class="hero-content">
+            <h2 class="typing-text">Senior Software Engineer</h2>
+            <p>Specializing in Golang, microservice architecture, and high-scale system design.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
     </header>
-    
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm a passionate developer skilled in Go, WebRTC, and Flutter. I love building high-performance applications and exploring new technologies.</p>
-    </section>
-    
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Golang (Gin, Fiber, Cobra)</li>
-            <li>Flutter (Cross-Platform Development)</li>
-            <li>WebRTC (Real-time Communication)</li>
-            <li>Blockchain (Ethereum, Smart Contracts)</li>
-            <li>PostgreSQL & Database Optimization</li>
-        </ul>
-    </section>
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project Name</h3>
-            <p>Short description of the project. <a href="#">View Project</a></p>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>I am a backend systems engineer focused on building robust, scalable infrastructure. With a foundation in Linux environments and a passion for database optimization and sharding, I design systems built for high performance.</p>
+                <p>My journey into software engineering is backed by a strong analytical foundation, holding an M.Sc. in Biotechnology and previously competing as a National Finalist in the Smart India Hackathon. I prioritize local security, privacy, and minimalist, highly efficient workflows.</p>
+                <p>When I'm not designing data lake architectures or writing Go, you can usually find me riding my TVS Apache RR 310 or refining my local development setup.</p>
+            </div>
         </div>
     </section>
-    
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: your.email@example.com</p>
-        <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+
+    <section id="skills" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fa-brands fa-golang"></i>
+                    <h3>Core Languages</h3>
+                    <p>Golang, Bash, SQL</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-server"></i>
+                    <h3>System Design</h3>
+                    <p>Microservices, Sharding, Data Lakes, Concurrent Processing</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Infrastructure & Data</h3>
+                    <p>PostgreSQL, NATS JetStream, WebSockets</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-brands fa-linux"></i>
+                    <h3>Environment & Security</h3>
+                    <p>Ubuntu, AES-256-GCM Encryption, Local Secret Management</p>
+                </div>
+            </div>
+        </div>
     </section>
-    
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>FTL-Service</h3>
+                        <p>A high-performance bridge service engineered to handle concurrent trading signals and follower executions. Built utilizing NATS JetStream for message brokering, PostgreSQL for robust data constraints, and WebSockets for real-time communication.</p>
+                        <div class="project-tags">
+                            <span>Go</span>
+                            <span>NATS</span>
+                            <span>PostgreSQL</span>
+                            <span>WebSockets</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>ChronoLock</h3>
+                        <p>A highly secure, paranoid local secret management utility. Developed to eliminate cloud dependency, it utilizes AES-256-GCM encryption, time-based passwords, and strict filesystem locking to protect sensitive developer secrets.</p>
+                        <div class="project-tags">
+                            <span>Go</span>
+                            <span>Cryptography</span>
+                            <span>Bash</span>
+                            <span>Security</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Next-Word Predictor</h3>
+                        <p>A statistical language model built from scratch. Implements Markov chains and trigram models for predictive text generation, featuring custom memory-optimization techniques to handle training on large corpora efficiently.</p>
+                        
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">&lt; 5ms</span>
+                                <span class="metric-label">P99 Latency</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">-68%</span>
+                                <span class="metric-label">RAM Footprint</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">50GB+</span>
+                                <span class="metric-label">Training Corpus</span>
+                            </div>
+                        </div>
+
+                        <div class="project-tags">
+                            <span>Go</span>
+                            <span>Statistical Modeling</span>
+                            <span>Memory Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">I am currently focused on engineering challenges at scale. Feel free to reach out for technical discussions or opportunities.</p>
+            <div class="contact-links">
+                <a href="https://github.com/krishanu-ghosh" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="#" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:your.email@example.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>&copy; 2026 Senior Backend Engineer. Minimalist design for maximum focus.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
