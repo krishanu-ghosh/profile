@@ -330,3 +330,101 @@ footer {
         font-size: 2.5rem;
     }
 }
+
+/* Button Highlight Animation */
+.highlight-pulse {
+    animation: pulse-accent 2.5s ease-out;
+}
+
+@keyframes pulse-accent {
+    0% { 
+        box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.7); 
+        transform: scale(1); 
+    }
+    50% { 
+        box-shadow: 0 0 0 15px rgba(20, 184, 166, 0); 
+        transform: scale(1.05); 
+        background-color: var(--accent); 
+        color: #000; /* Dark text for contrast against the teal */
+    }
+    100% { 
+        box-shadow: 0 0 0 0 rgba(20, 184, 166, 0); 
+        transform: scale(1); 
+    }
+}
+
+/* Logo Link Styling */
+.logo a {
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: opacity 0.3s ease;
+}
+
+.logo a:hover {
+    opacity: 0.8;
+}
+
+.logo a span {
+    color: var(--accent);
+}
+
+/* Phone Dropdown UI */
+.phone-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.phone-dropdown {
+    position: absolute;
+    bottom: calc(100% + 10px); /* Opens above the button */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: var(--bg-alt);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 140px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.phone-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.phone-dropdown a, .phone-dropdown button {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    padding: 0.6rem 1rem;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.phone-dropdown a:hover, .phone-dropdown button:hover {
+    background-color: rgba(20, 184, 166, 0.1);
+    color: var(--accent);
+}
+
+/* Styling for the revealed number */
+.viewed-number {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    color: var(--accent);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}

@@ -3,6 +3,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
+        
+        // Handle absolute top scroll for the logo
+        if (targetId === '#top') {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            return;
+        }
+
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
@@ -15,6 +25,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 top: offsetPosition,
                 behavior: 'smooth'
             });
+
+            // Trigger highlight animation if the target is the CV button
+            if (targetId === '#cv-btn') {
+                targetElement.classList.remove('highlight-pulse');
+                void targetElement.offsetWidth; // Force browser reflow to restart animation
+                targetElement.classList.add('highlight-pulse');
+            }
         }
     });
 });
@@ -75,5 +92,41 @@ window.addEventListener('scroll', () => {
         navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
     } else {
         navbar.style.boxShadow = 'none';
+    }
+});
+
+// Phone Menu Logic
+const phoneBtn = document.getElementById('phone-btn');
+const phoneMenu = document.getElementById('phone-menu');
+const viewPhoneBtn = document.getElementById('view-phone');
+
+// Set your display number here
+const displayPhoneNumber = "+91-8100295854"; 
+
+// Toggle menu visibility
+phoneBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    phoneMenu.classList.toggle('active');
+});
+
+// Handle "View" click to reveal number
+viewPhoneBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    viewPhoneBtn.innerHTML = `<span class="viewed-number">${displayPhoneNumber}</span>`;
+    viewPhoneBtn.style.cursor = 'default';
+});
+
+// Close menu when clicking outside of it
+document.addEventListener('click', (e) => {
+    if (!phoneBtn.contains(e.target) && !phoneMenu.contains(e.target)) {
+        phoneMenu.classList.remove('active');
+        
+        // Reset the "View" button back to its default state after menu hides
+        setTimeout(() => {
+            if (!phoneMenu.classList.contains('active')) {
+                viewPhoneBtn.innerHTML = `<i class="fas fa-eye"></i> View`;
+                viewPhoneBtn.style.cursor = 'pointer';
+            }
+        }, 200); 
     }
 });
