@@ -52,6 +52,7 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    line-height: 1;
 }
 
 .logo span {
@@ -84,6 +85,7 @@ body {
 
 .section {
     padding: 6rem 0;
+    scroll-margin-top: 80px;
 }
 
 .bg-alt {
@@ -114,10 +116,10 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 2rem;
+    padding: 64px 2rem 0;
 }
 
-.hero-content h2 {
+.hero-content h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
@@ -141,7 +143,11 @@ body {
     text-decoration: none;
     border-radius: 4px;
     font-weight: bold;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -170,6 +176,116 @@ body {
 
 .about-content p {
     margin-bottom: 1.5rem;
+}
+
+/* Experience Timeline */
+.timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.timeline-company {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.timeline-company:hover {
+    border-color: rgba(20, 184, 166, 0.4);
+}
+
+.company-header {
+    padding: 1.25rem 1.75rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    background-color: rgba(20, 184, 166, 0.03);
+}
+
+.company-info h3 {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+}
+
+.company-location {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.company-tenure {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    white-space: nowrap;
+}
+
+.timeline-roles {
+    padding: 0 1.75rem;
+}
+
+.timeline-role {
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.timeline-role:last-child {
+    border-bottom: none;
+}
+
+.role-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.role-title {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+.role-period {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    white-space: nowrap;
+}
+
+.role-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.role-bullets li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.55;
+}
+
+.role-bullets li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
 }
 
 /* Skills */
@@ -282,14 +398,40 @@ body {
 }
 
 .project-tags span {
-    background-color: rgba(20, 184, 166, 0.1); /* Teal with 10% opacity */
+    background-color: rgba(20, 184, 166, 0.1);
     color: var(--accent);
-    border: 1px solid rgba(20, 184, 166, 0.2); /* Teal with 20% opacity */
+    border: 1px solid rgba(20, 184, 166, 0.2);
     padding: 0.3rem 0.8rem;
     border-radius: 4px;
     font-size: 0.8rem;
     font-weight: 500;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.project-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.project-link:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background-color: rgba(20, 184, 166, 0.05);
 }
 
 /* Contact */
@@ -328,6 +470,10 @@ footer {
     color: var(--text-primary);
     cursor: pointer;
     transition: color 0.3s ease;
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
 }
 
 .mobile-menu-toggle:hover {
@@ -471,7 +617,7 @@ footer {
         width: 100%;
     }
 
-    .hero-content h2 {
+    .hero-content h1 {
         font-size: 2.5rem;
     }
 }

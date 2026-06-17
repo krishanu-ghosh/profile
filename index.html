@@ -3,32 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Krishanu Ghosh — Senior Software Engineer specializing in Golang, microservice architecture, and high-scale system design.">
+    <meta property="og:title" content="Krishanu Ghosh | Portfolio">
+    <meta property="og:description" content="Senior Software Engineer specializing in Golang, microservice architecture, and high-scale system design.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Krishanu Ghosh | Portfolio">
+    <meta name="twitter:description" content="Senior Software Engineer specializing in Golang, microservice architecture, and high-scale system design.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙</text></svg>">
     <title>Krishanu Ghosh | Portfolio</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <nav id="navbar">
         <div class="nav-content">
-            <h1 class="logo"><a href="#top">Krishanu<span> Ghosh</span></a></h1>
-            
-            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <div class="logo"><a href="#top">Krishanu<span> Ghosh</span></a></div>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
 
             <ul class="nav-links" id="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#cv-btn"><i class="fas fa-download"></i> Download CV</a></li>
+                <li><a href="https://github.com/krishanu-ghosh/profile/releases/download/downloads/Krishanu-Resume.pdf" download><i class="fas fa-download"></i> Download CV</a></li>
             </ul>
         </div>
     </nav>
 
     <header id="hero">
         <div class="hero-content">
-            <h2 class="typing-text">Senior Software Engineer</h2>
+            <h1 class="typing-text">Senior Software Engineer</h1>
             <p>Specializing in Golang, microservice architecture, and high-scale system design.</p>
             <a href="#projects" class="btn">View My Work</a>
         </div>
@@ -38,14 +48,114 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <p>I am a backend systems engineer focused on building robust, scalable infrastructure. With a foundation in Linux environments and a passion for database optimization and sharding, I design systems built for high performance.</p>
-                <p>My journey into software engineering is backed by a strong analytical foundation, holding an M.Sc. in Biotechnology and previously competing as a National Finalist in the Smart India Hackathon. I prioritize local security, privacy, and minimalist, highly efficient workflows.</p>
-                <p>When I'm not designing data lake architectures or writing Go, you can usually find me riding my TVS Apache RR 310 or refining my local development setup.</p>
+                <p>My path into software didn't start with a traditional CS degree — it started with an MCA and a lot of curiosity about what makes systems fast. Over four years I went from intern to senior engineer, and what's kept me there is the same thing: a preference for problems where the constraint is real — latency, memory, throughput — rather than abstract.</p>
+                <p>I care disproportionately about local security, developer tooling, and the kind of infrastructure decisions that quietly compound over time. I build for correctness and performance first, and treat complexity as a cost rather than a feature.</p>
+                <p>Outside of engineering, I tend toward things that move fast and require full attention.</p>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="section bg-alt">
+    <section id="experience" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+
+                <div class="timeline-company">
+                    <div class="company-header">
+                        <div class="company-info">
+                            <h3>Finvasia</h3>
+                            <span class="company-location"><i class="fas fa-location-dot"></i> Mohali, Punjab, India</span>
+                        </div>
+                    </div>
+                    <div class="timeline-roles">
+                        <div class="timeline-role">
+                            <div class="role-header">
+                                <span class="role-title">GoLang Developer</span>
+                                <span class="role-period">Aug 2025 – Present</span>
+                            </div>
+                            <ul class="role-bullets">
+                                <li>Developing high-performance backend services in Go, leveraging goroutines, channels, and concurrency patterns for scalable, low-latency fintech systems.</li>
+                                <li>Designing and optimizing microservices architecture with PostgreSQL, ensuring reliability and fault tolerance under heavy transaction loads.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-company">
+                    <div class="company-header">
+                        <div class="company-info">
+                            <h3>Datopic Technologies Pvt. Ltd.</h3>
+                            <span class="company-location"><i class="fas fa-location-dot"></i> Mohali, Punjab, India</span>
+                        </div>
+                        <span class="company-tenure">Mar 2021 – July 2025</span>
+                    </div>
+                    <div class="timeline-roles">
+                        <div class="timeline-role">
+                            <div class="role-header">
+                                <span class="role-title">Senior Software Engineer</span>
+                                <span class="role-period">Sept 2023 – July 2025</span>
+                            </div>
+                            <ul class="role-bullets">
+                                <li>Designed scalable microservices and RESTful APIs in Go; led legacy system optimization — reduced response time by 50%, improved throughput by 60%.</li>
+                                <li>Mentored 2 junior developers, led sprint planning, and contributed to architectural decisions for core platform services.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-role">
+                            <div class="role-header">
+                                <span class="role-title">Software Engineer</span>
+                                <span class="role-period">July 2022 – Aug 2023</span>
+                            </div>
+                            <ul class="role-bullets">
+                                <li>Engineered backend services in Go and fine-tuned PostgreSQL performance through query optimization and indexing, impacting 30K users.</li>
+                                <li>Collaborated cross-functionally to roll out enhancements with zero downtime, translating PM feature requests into scalable APIs.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-role">
+                            <div class="role-header">
+                                <span class="role-title">Associate Software Engineer</span>
+                                <span class="role-period">Sept 2021 – June 2022</span>
+                            </div>
+                            <ul class="role-bullets">
+                                <li>Developed core backend features in Go, applying concurrency models and modular design; supported performance profiling and load testing.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-role">
+                            <div class="role-header">
+                                <span class="role-title">Intern</span>
+                                <span class="role-period">Mar 2021 – Aug 2021</span>
+                            </div>
+                            <ul class="role-bullets">
+                                <li>Built backend modules and unit tests in Go; contributed to sprint deliverables following Agile workflows.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-company">
+                    <div class="company-header">
+                        <div class="company-info">
+                            <h3>Simpsoft Solutions Pvt. Ltd.</h3>
+                            <span class="company-location"><i class="fas fa-location-dot"></i> Kolkata, West Bengal, India</span>
+                        </div>
+                    </div>
+                    <div class="timeline-roles">
+                        <div class="timeline-role">
+                            <div class="role-header">
+                                <span class="role-title">Software Engineering Intern – Salesforce Platform</span>
+                                <span class="role-period">Jan 2019 – May 2019</span>
+                            </div>
+                            <ul class="role-bullets">
+                                <li>Built 10+ custom Salesforce objects, 15 Apex triggers, and 5 Lightning Web Components; reduced manual data entry by 30%.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
         <div class="container">
             <h2 class="section-title">Technical Expertise</h2>
             <div class="skills-grid">
@@ -87,6 +197,9 @@
                             <span>PostgreSQL</span>
                             <span>WebSockets</span>
                         </div>
+                        <div class="project-links">
+                            <a href="https://github.com/krishanu-ghosh/ftl-service" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> View on GitHub</a>
+                        </div>
                     </div>
                 </div>
                 <div class="project-card">
@@ -99,13 +212,16 @@
                             <span>Bash</span>
                             <span>Security</span>
                         </div>
+                        <div class="project-links">
+                            <a href="https://github.com/krishanu-ghosh/chronolock" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> View on GitHub</a>
+                        </div>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-content">
                         <h3>Next-Word Predictor</h3>
                         <p>A statistical language model built from scratch. Implements Markov chains and trigram models for predictive text generation, featuring custom memory-optimization techniques to handle training on large corpora efficiently.</p>
-                        
+
                         <div class="project-metrics">
                             <div class="metric">
                                 <span class="metric-value">&lt; 5ms</span>
@@ -126,6 +242,9 @@
                             <span>Statistical Modeling</span>
                             <span>Memory Optimization</span>
                         </div>
+                        <div class="project-links">
+                            <a href="https://github.com/krishanu-ghosh/next-word-predictor" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> View on GitHub</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -141,12 +260,12 @@
                 <a href="https://linkedin.com/in/krishanu-ghosh-profile" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                 <a href="mailto:imkrishanughosh@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Email</a>
                 <div class="phone-wrapper">
-        <a href="#" id="phone-btn" class="btn btn-outline"><i class="fas fa-phone"></i> Phone</a>
-        <div id="phone-menu" class="phone-dropdown">
-            <button id="view-phone"><i class="fas fa-eye"></i> View</button>
-            <a href="tel:+918100295854" id="call-phone"><i class="fas fa-phone-alt"></i> Call</a>
-        </div>
-    </div>
+                    <button id="phone-btn" class="btn btn-outline"><i class="fas fa-phone"></i> Phone</button>
+                    <div id="phone-menu" class="phone-dropdown">
+                        <button id="view-phone"><i class="fas fa-eye"></i> View</button>
+                        <a href="tel:+918100295854" id="call-phone"><i class="fas fa-phone-alt"></i> Call</a>
+                    </div>
+                </div>
                 <a id="cv-btn" href="https://github.com/krishanu-ghosh/profile/releases/download/downloads/Krishanu-Resume.pdf" class="btn btn-outline"><i class="fas fa-download"></i> Download CV</a>
             </div>
         </div>

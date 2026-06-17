@@ -40,7 +40,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Rotating typing effect for the hero section
 const textElement = document.querySelector('.typing-text');
 const phrases = [
-    "Krishanu Ghosh",
     "Senior Software Engineer",
     "Golang Developer",
     "Systems Architect",
@@ -138,9 +137,11 @@ const mobileIcon = mobileToggle.querySelector('i');
 
 mobileToggle.addEventListener('click', () => {
     navLinksContainer.classList.toggle('active');
-    
-    // Swap hamburger icon to an 'X' when open
-    if(navLinksContainer.classList.contains('active')) {
+
+    const isOpen = navLinksContainer.classList.contains('active');
+    mobileToggle.setAttribute('aria-expanded', isOpen);
+
+    if (isOpen) {
         mobileIcon.classList.remove('fa-bars');
         mobileIcon.classList.add('fa-times');
     } else {
@@ -153,6 +154,7 @@ mobileToggle.addEventListener('click', () => {
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinksContainer.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
         mobileIcon.classList.remove('fa-times');
         mobileIcon.classList.add('fa-bars');
     });
