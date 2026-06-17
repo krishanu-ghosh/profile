@@ -25,13 +25,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 top: offsetPosition,
                 behavior: 'smooth'
             });
-
-            // Trigger highlight animation if the target is the CV button
-            if (targetId === '#cv-btn') {
-                targetElement.classList.remove('highlight-pulse');
-                void targetElement.offsetWidth; // Force browser reflow to restart animation
-                targetElement.classList.add('highlight-pulse');
-            }
         }
     });
 });
