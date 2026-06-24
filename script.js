@@ -152,3 +152,100 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         mobileIcon.classList.add('fa-bars');
     });
 });
+
+// ── Animations ──────────────────────────────────────────────────────────────
+
+document.documentElement.classList.add('js-ready');
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (!prefersReducedMotion) {
+
+    // Scroll-reveal observer — triggers when element is 48px inside viewport
+    let scrollDir = 'down';
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+        scrollDir = window.scrollY > lastScrollY ? 'down' : 'up';
+        lastScrollY = window.scrollY;
+    }, { passive: true });
+
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.toggle('scroll-up', scrollDir === 'up');
+                requestAnimationFrame(() => entry.target.classList.add('is-visible'));
+            } else {
+                entry.target.classList.remove('is-visible', 'scroll-up');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+
+    // Section titles
+    document.querySelectorAll('.section-title').forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+    });
+
+    // About paragraphs — staggered
+    document.querySelectorAll('.about-content p').forEach((el, i) => {
+        el.classList.add('reveal');
+        el.style.setProperty('--reveal-delay', `${i * 110}ms`);
+        revealObserver.observe(el);
+    });
+
+    // Timeline companies — staggered
+    document.querySelectorAll('.timeline-company').forEach((el, i) => {
+        el.classList.add('reveal');
+        el.style.setProperty('--reveal-delay', `${i * 100}ms`);
+        revealObserver.observe(el);
+    });
+
+    // Skill cards — staggered within the grid
+    document.querySelectorAll('.skills-grid').forEach(grid => {
+        [...grid.children].forEach((card, i) => {
+            card.classList.add('reveal-card');
+            card.style.setProperty('--reveal-delay', `${i * 90}ms`);
+            revealObserver.observe(card);
+        });
+    });
+
+    // Domain headers
+    document.querySelectorAll('.domain-header').forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+    });
+
+    // Project cards — staggered per grid
+    document.querySelectorAll('.projects-grid').forEach(grid => {
+        [...grid.children].forEach((card, i) => {
+            card.classList.add('reveal-card');
+            card.style.setProperty('--reveal-delay', `${i * 80}ms`);
+            revealObserver.observe(card);
+        });
+    });
+
+    // Contact section
+    const contactDesc = document.querySelector('.contact-desc');
+    if (contactDesc) {
+        contactDesc.classList.add('reveal');
+        revealObserver.observe(contactDesc);
+    }
+    document.querySelectorAll('.contact-links > *').forEach((el, i) => {
+        el.classList.add('reveal');
+        el.style.setProperty('--reveal-delay', `${i * 80}ms`);
+        revealObserver.observe(el);
+    });
+
+    // Hero grid parallax — shifts the dot grid subtly as page scrolls
+    const heroEl = document.getElementById('hero');
+    let rafPending = false;
+    window.addEventListener('scroll', () => {
+        if (!rafPending) {
+            rafPending = true;
+            requestAnimationFrame(() => {
+                heroEl.style.setProperty('--scroll', window.scrollY);
+                rafPending = false;
+            });
+        }
+    }, { passive: true });
+}
